@@ -10,6 +10,8 @@
     <string name="team_name_epik_games_team_3">Team Name: Epik Games (Team 3)</string>
     <string name="team_members_sanath_kamath_mridul_gupta_joey_orofino_kunal_mohindra_sameer_kapoor">Team Members: Sanath Kamath. Mridul Gupta, Joey Orofino, Kunal Mohindra, Sameer Kapoor</string>
     <string name="congratulations_you_have_guessed_the_word_correctly">Congratulations! You have guessed the word correctly</string>
+    <string name="resign">resign</string>
+    <string name="draw">draw</string>
 
     <!-- Strings used for fragments for navigation -->
 
