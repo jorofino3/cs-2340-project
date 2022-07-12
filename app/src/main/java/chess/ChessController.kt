@@ -47,7 +47,6 @@ class ChessController(tileIdArr: Array<Int>) {
         if (board.isKingAttacked) {
             return 3
         }
-
         return -1
     }
 
@@ -67,8 +66,10 @@ class ChessController(tileIdArr: Array<Int>) {
         if (tileIdSquareMap[tileId] == null) {
             throw IllegalArgumentException("Not a valid tileId")
         }
-
         return tileIdSquareMap[tileId]!!
     }
 
+    fun getID(value: Square): Int {
+        return tileIdSquareMap.filter { value == it.value }.keys.first()
+    }
 }

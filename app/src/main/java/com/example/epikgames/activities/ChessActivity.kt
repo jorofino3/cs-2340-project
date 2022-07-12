@@ -12,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.view.get
 import androidx.gridlayout.widget.GridLayout
 import chess.ChessController
 import com.example.epikgames.R
@@ -87,7 +88,13 @@ class ChessActivity : AppCompatActivity() {
 
                         3 -> {
                             Toast.makeText(this, "CHECK", Toast.LENGTH_SHORT).show()
+                            val kingSquare = board.getKingSquare(board.sideToMove.flip())
+                            val kingID = controller.getID(kingSquare)
+                            val kingTile = chessGrid.get(kingID)
+                            kingTile.setBackgroundColor(Color.parseColor("#FE0000"))
                         }
+
+                        -1 -> {}
                     }
 
                     drawBoard()
@@ -208,6 +215,8 @@ class ChessActivity : AppCompatActivity() {
             inTile.addView(text);
         }
     }
+
+    //private fun highLightKingSquare()
 
     private fun generateNewTile(i: Int): ConstraintLayout {
         val tile: ConstraintLayout = layoutInflater.inflate(R.layout.chess_tile, null) as ConstraintLayout
