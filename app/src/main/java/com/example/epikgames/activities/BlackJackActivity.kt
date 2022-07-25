@@ -1,16 +1,14 @@
 package com.example.epikgames.activities
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.Typeface
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
-import android.os.Handler
-import android.os.Looper
-import android.widget.ImageButton
-import android.widget.ImageView
-import android.widget.RelativeLayout
+import androidx.appcompat.app.AppCompatActivity
 import blackjack.*
 import com.example.epikgames.R
 import java.util.*
@@ -213,5 +211,20 @@ class BlackJackActivity : AppCompatActivity() {
         }
 
         Thread(runnable).start()
+    }
+
+    private fun updateTurn() {
+        val playerLabel = findViewById<TextView>(R.id.playerLabel)
+        val dealerLabel = findViewById<TextView>(R.id.dealerLabel)
+        var playerTurn: Boolean
+        playerTurn = true
+        if (playerTurn) {
+            playerLabel.setTypeface(null, Typeface.BOLD)
+            dealerLabel.setTypeface(null, Typeface.NORMAL)
+            playerTurn =  false;
+        } else {
+            dealerLabel.setTypeface(null, Typeface.BOLD)
+            playerLabel.setTypeface(null, Typeface.NORMAL)
+        }
     }
 }

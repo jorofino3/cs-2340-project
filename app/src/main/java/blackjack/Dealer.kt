@@ -4,6 +4,8 @@ import java.util.*
 
 class Dealer(private var deck: Deck = Deck(), var hand: Hand = Hand()) {
 
+
+    //seperate class
     fun deal(hand: Hand, faceUp: Boolean = true) {
         if (deck.isEmpty()) {
             deck = Deck()

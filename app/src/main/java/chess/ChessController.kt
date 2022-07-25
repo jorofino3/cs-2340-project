@@ -33,6 +33,16 @@ class ChessController(tileIdArr: Array<Int>) {
         return false;
     }
 
+
+    fun undo(board: Board): Boolean {
+        try {
+            board.undoMove()
+            return true
+        } catch (e: Exception) {
+            return false
+        }
+    }
+
     fun chessScenarios(board: Board): ChessScenarios? {
         if (board.isMated) {
             return ChessScenarios.CHECKMATE
@@ -52,14 +62,6 @@ class ChessController(tileIdArr: Array<Int>) {
         return null
     }
 
-    fun undo(board: Board): Boolean {
-        try {
-            board.undoMove()
-            return true
-        } catch (e: Exception) {
-            return false
-        }
-    }
 
     fun resign(board: Board): String {
         return board.sideToMove.value()

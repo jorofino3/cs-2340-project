@@ -130,7 +130,6 @@ class GameController {
                 transitionQueue.add(SettlementTransition(game.copy()))
             }
         }
-
         game.dealer.resetCards()
         transitionQueue.add(ResetTransition(game.copy()))
     }
